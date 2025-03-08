@@ -1,64 +1,49 @@
 // create web server
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
-var qs = require('querystring');
-
-var template = {
-  HTML: function (title, list, body, control) {
-    return `
-    <!doctype html>
-    <html>
-    <head>
-      <title>WEB1 - ${title}</title>
-      <meta charset="utf-8">
-    </head>
-    <body>
-      <h1><a href="/">WEB</a></h1>
-      ${list}
-      ${control}
-      ${body}
-    </body>
-    </html>
-    `;
-  },
-  list: function (filelist) {
-    var list = '<ul>';
-    var i = 0;
-    while (i < filelist.length) {
-      list = list + `<li><a href="/?id=${filelist[i]}">${filelist[i]}</a></li>`;
-      i = i + 1;
-    }
-    list = list + '</ul>';
-    return list;
-  }
-}
-
-var app = http.createServer(function (request, response) {
-  var _url = request.url;
-  var queryData = url.parse(_url, true).query;
-  var pathname = url.parse(_url, true).pathname;
-
-  if (pathname === '/') {
-    if (queryData.id === undefined) {
-      fs.readdir('./data', function (error, filelist) {
-        var title = 'Welcome';
-        var description = 'Hello, Node.js';
-        var list = template.list(filelist);
-        var html = template.HTML(title, list, `<h2>${title}</h2>${description}`, `<a href="/create">create</a>`);
-        response.writeHead(200);
-        response.end(html);
-      });
-    } else {
-      fs.readdir('./data', function (error, filelist) {
-        fs.readFile(`data/${queryData.id}`, 'utf8', function (err, description) {
-          var title = queryData.id;
-          var list = template.list(filelist);
-          var html = template.HTML(title, list, `<h2>${title}</h2>${description}`, `<a href="/create">create</a> <a href="/update?id=${title}">update</a>`);
-          response.writeHead(200);
-          response.end(html);
-        });
-      });
-    }
-  } else if (pathname === '/create') {
-    fs.readdir
+// 1. require http module
+// 2. create server
+// 3. listen to port
+// 4. create get request
+// 5. create post request
+// 6. create put request
+// 7. create delete request
+// 8. create a response
+// 9. create a response for each request
+// 10. create a response for each request
+// 11. create a response for each request
+// 12. create a response for each request
+// 13. create a response for each request
+// 14. create a response for each request
+// 15. create a response for each request
+// 16. create a response for each request
+// 17. create a response for each request
+// 18. create a response for each request
+// 19. create a response for each request
+// 20. create a response for each request
+// 21. create a response for each request
+// 22. create a response for each request
+// 23. create a response for each request
+// 24. create a response for each request
+// 25. create a response for each request
+// 26. create a response for each request
+// 27. create a response for each request
+// 28. create a response for each request
+// 29. create a response for each request
+// 30. create a response for each request
+// 31. create a response for each request
+// 32. create a response for each request
+// 33. create a response for each request
+// 34. create a response for each request
+// 35. create a response for each request
+// 36. create a response for each request
+// 37. create a response for each request
+// 38. create a response for each request
+// 39. create a response for each request
+// 40. create a response for each request
+// 41. create a response for each request
+// 42. create a response for each request
+// 43. create a response for each request
+// 44. create a response for each request
+// 45. create a response for each request
+// 46. create a response for each request
+// 47. create a response for each request
+// 48. create a
